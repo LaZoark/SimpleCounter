@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SimpleCounter</string>
+    <string name="numberInit">0</string>
+    <string name="buttonText">加 1</string>
+</resources>

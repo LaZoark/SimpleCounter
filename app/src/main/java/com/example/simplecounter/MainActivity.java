@@ -1,4 +1,4 @@
-package com.example.ch4example4_3hw;
+package com.example.simplecounter;
 
 import androidx.appcompat.app.AppCompatActivity;
 

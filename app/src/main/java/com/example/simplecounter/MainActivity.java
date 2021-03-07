@@ -1,5 +1,8 @@
-package com.example.simplecounter;
+package com.example.ch4example4_3hw;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity
         txv = (TextView) findViewById(R.id.textView); // 找出要參照的物件
         btn = (Button) findViewById(R.id.button); // 找出要參照的物件
 
+        txv.setText("0");
         btn.setOnClickListener(this); // 登錄監聽物件, this 表示活動物件本身
         btn.setOnLongClickListener(this);   //  將活動物件登錄為按鈕的長按監聽器
         txv.setOnLongClickListener(this);   // 將活動物件登錄為文字標籤的長按監聽器
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onClick(View v) {
+        txv.setTextColor(Color.CYAN);
         txv.setText(String.valueOf(++counter)); // 將計數值加 1, 然後轉成字串顯示出來
     }
 
@@ -33,9 +38,11 @@ public class MainActivity extends AppCompatActivity
     public boolean onLongClick(View v) {
         if(v.getId() == R.id.textView) { // 判斷來源物件是否為顯示計數值的 txv, 若是就將計數歸零
             counter = 0;
+            txv.setTextColor(Color.RED);
             txv.setText("0");
         }
         else { // 來源物件為按鈕, 將計數值加 2
+            txv.setTextColor(Color.GREEN);
             counter += 2;
             txv.setText(String.valueOf(counter));
         }
